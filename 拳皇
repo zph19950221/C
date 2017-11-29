@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>//随机数
+#include <windows.h>//休眠
+int main()
+{
+    srand(time(NULL));//随机数字
+    int hp1 = 100,hp2 = 100; //1 2  初始血量
+    int att1,att2;//12 攻击力
+    int i = 1;//攻击轮数
+    int j;
+    while(hp1 >= 0 && hp2 >= 0)//双方血量大于0时
+    {
+        j = rand() % 11;//是先攻击
+        att1 = rand() % 11 + 5;//随机数字摸上11 + 5 范围等于5-15
+
+        if(att1 == 15)//暴击
+        {
+            att1 *= j;
+        }
+
+        att2 = rand() % 11 + 5;
+
+        if(att2 == 15)//暴击
+        {
+            att2 *= j;//随机暴击
+        }
+
+        printf("第%d轮\n",i);
+
+        if(j <= 5)//j随机数小于或者等于5时候 玩家2攻击
+        {
+            hp1 -= att2;//玩家2攻击
+            printf("玩家2攻击力：%d，玩家1剩余血量：%d\n\n",att2,hp1);
+        }
+
+        if(j >= 5)//j随机数小于或者等于5时候 玩家1攻击
+        {
+            hp2 -= att1;//玩家1攻击
+            printf("玩家1攻击力：%d，玩家2剩余血量：%d\n\n",att1,hp2);
+        }
+
+        if(hp1 <= 0 && hp2 <= 0)//双方血量少于0时候停止攻击
+        {
+            break;
+        }
+
+        i++;
+        Sleep(800);//休眠500毫秒
+    }
+        printf("ko!玩家1剩余血量：%d\t，玩家2剩余血量：%d\t",hp1,hp2 );
+    return 0;
+}
