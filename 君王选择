@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i;
+    while(1)
+    {
+        printf("性格测试：\n如果你是一位君王，对于身旁的伴侣你希望？\n");
+        printf("1、只要一位珍爱的妻子\n2、可以有两位以上的爱人\n3、拥有三千佳丽\n请选择：\n");
+        do
+        {
+            scanf("%d",&i);
+            switch(i)
+            {
+                case 1:
+                    printf("你是一个痴情的君王\n");
+                    break;
+                case 2:
+                    printf("你是一个不错的君王\n");
+                    break;
+                case 3:
+                    printf("你是一个花心大萝卜君王\n");
+                    break;
+                default:
+                    printf("只能输入1-3数字，请重新输入：");
+                    break;
+
+            }
+        }while(i <= 0 || i > 3);
+
+    }
+        return 0;
+
+}
