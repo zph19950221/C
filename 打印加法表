@@ -1,0 +1,27 @@
+// 打印简易加法表.cpp: 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+
+
+int main()
+{
+	int i;
+	int num;
+	printf("请输入一个数字：");
+	scanf("%d",&num);
+	for (i = 0; i < num; i++)
+	{
+		printf("%d + %d = %d",i,(num - i),num);
+		if (i % 2 == 0)//偶数的时候
+		{
+			printf("\t");
+		}
+		else//奇数的时候
+		{
+			printf("\n");
+		}
+	}
+    return 0;
+}
+
