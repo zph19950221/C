@@ -1,0 +1,41 @@
+// 猜价格小游戏.cpp: 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+
+
+int main()
+{
+	int jiage;
+	int cai;
+	int cishu = 0;
+	srand(time(NULL));
+	jiage = rand() & 10;
+	for (;;)
+	{
+		printf("请输入你猜的价格：%d",jiage);
+		scanf("%d",&cai);
+		if (cai > jiage)
+		{
+			printf("大了\n");
+		}
+		else if (cai < jiage)
+		{
+			printf("小了\n");
+		}
+		else
+		{
+			printf("恭喜你猜对了");
+			cishu++;
+			break;
+		}
+		cishu++;
+	}
+	printf("你一共猜了%d次\n", cishu);
+	if (cishu <= 5)
+	{
+		printf("你很聪明 不到五次就猜中了");
+	}
+    return 0;
+}
+
