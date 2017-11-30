@@ -1,0 +1,23 @@
+// 循环输入玩家年龄.cpp: 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+
+
+int main()
+{
+	int year;
+	for (;;)
+	{
+		printf("请输入玩家的年龄：");
+		scanf("%d",&year);
+		printf("玩家的年龄是：%d\n",year);
+		if (year <= 0)
+		{
+			printf("输入错误");
+			break;
+		}
+	}
+    return 0;
+}
+
