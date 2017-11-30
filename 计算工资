@@ -1,0 +1,25 @@
+// test1.cpp: 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+
+
+int main()
+{
+	//计算6个月平均工资 
+	int i;
+	int gongzi;
+	int zonggongzi = 0;
+	int pingjungongzi;
+	for ( i = 0; i < 6; i++)
+	{
+		printf("请输入第%d个月工资\n",i + 1);
+		scanf("%d",&gongzi);
+		zonggongzi += gongzi;
+	}
+	pingjungongzi = zonggongzi / 6;
+	printf("平均工资是：%d\n",pingjungongzi);
+	printf("总工资是：%d",zonggongzi);
+    return 0;
+}
+
